@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "members": "Integrantes",
+    "nextGigs": "Próximas",
+    "events": "Pasadas",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "tagline": "Música de gaitas y tambores de Colombia en Berlín",
+    "location": "Berlín, Alemania"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "p1": "Un espacio de encuentro para preservar y difundir el sonido ancestral de las gaitas largas de los Montes de María.",
+    "p2": "Gaita macho, gaita hembra, tambores y maracas en su formato tradicional campesino, con apertura a nuevos diálogos musicales.",
+    "addPhoto": "Foto del grupo"
+  },
+  "members": {
+    "title": "Integrantes",
+    "member1": {
+      "instrument": "Gaita Macho"
+    },
+    "member2": {
+      "instrument": "Voz Femenina"
+    },
+    "member3": {
+      "instrument": "Tambora y Voz"
+    },
+    "member4": {
+      "instrument": "Llamador"
+    },
+    "member5": {
+      "instrument": "Tambor Alegre"
+    },
+    "member6": {
+      "instrument": "Gaita Hembra y Dirección"
+    }
+  },
+  "nextGigs": {
+    "title": "Próximas Presentaciones",
+    "comingSoon": "Muy Pronto",
+    "stayTuned": "Mantente atento a nuestras próximas presentaciones"
+  },
+  "events": {
+    "title": "Eventos Pasados",
+    "event1": {
+      "name": "SWEAT",
+      "description": "Ritual de música y danza en vivo por el espíritu del agua",
+      "date": "16-17 de agosto, 2025",
+      "location": "MaHalla, Berlín"
+    },
+    "event2": {
+      "name": "Festival de Cine La Sur Real",
+      "description": "CUMBÉ abrió el festival de cine colombiano en Berlín",
+      "date": "2025",
+      "location": "Berlín"
+    }
+  },
+  "contact": {
+    "title": "Contacto"
+  },
+  "footer": {
+    "text": "Música tradicional colombiana en Berlín"
+  }
+}

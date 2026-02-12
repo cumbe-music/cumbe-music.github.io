@@ -1,0 +1,69 @@
+---
+import { languages, getLangFromUrl } from '../i18n/utils';
+
+const currentLang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname.replace(`/${currentLang}`, '').replace(/^\//, '');
+---
+
+<div class="language-switcher">
+  {Object.entries(languages).map(([lang, label]) => {
+    const href = lang === 'en' ? `/${currentPath}` : `/${lang}/${currentPath}`;
+    const isActive = lang === currentLang;
+
+    return (
+      <a
+        href={href}
+        class:list={['lang-btn', { active: isActive }]}
+      >
+        {lang.toUpperCase()}
+      </a>
+    );
+  })}
+</div>
+
+<style>
+  .language-switcher {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: flex;
+    gap: 0.5rem;
+    background-color: rgba(0, 45, 66, 0.9);
+    padding: 0.5rem;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(195, 248, 140, 0.2);
+  }
+
+  .lang-btn {
+    background-color: transparent;
+    color: var(--blanco);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .lang-btn:hover {
+    background-color: rgba(195, 248, 140, 0.1);
+    color: var(--verde);
+  }
+
+  .lang-btn.active {
+    background-color: var(--verde);
+    color: var(--azul);
+  }
+
+  @media (max-width: 768px) {
+    .language-switcher {
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+</style>

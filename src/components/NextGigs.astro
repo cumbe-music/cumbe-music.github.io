@@ -1,0 +1,122 @@
+---
+import { useTranslations } from '../i18n/utils';
+import type { Language } from '../i18n/utils';
+import ScrollArrow from './ScrollArrow.astro';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="next-gigs" class="section">
+  <div class="container">
+    <h2 class="section-title">{t('nextGigs.title')}</h2>
+    <div class="coming-soon-container">
+      <div class="coming-soon-card">
+        <div class="coming-soon-content">
+          <h3 class="coming-soon-title">{t('nextGigs.comingSoon')}</h3>
+          <p class="coming-soon-text">{t('nextGigs.stayTuned')}</p>
+          <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ScrollArrow targetSection="events" />
+  </div>
+</section>
+
+<style>
+  .coming-soon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+  }
+
+  .coming-soon-card {
+    background: linear-gradient(135deg, rgba(195, 248, 140, 0.05) 0%, rgba(217, 101, 24, 0.05) 100%);
+    padding: 4rem 3rem;
+    border-radius: 30px;
+    border: 2px dashed rgba(195, 248, 140, 0.3);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .coming-soon-card:hover {
+    border-color: var(--verde);
+    box-shadow: 0 20px 50px rgba(195, 248, 140, 0.2);
+    transform: translateY(-5px);
+  }
+
+  .coming-soon-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .coming-soon-title {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--verde);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+
+  .coming-soon-text {
+    color: var(--blanco);
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .dots {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--verde);
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  .dot:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  .dot:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .coming-soon-card {
+      padding: 3rem 2rem;
+    }
+  }
+</style>

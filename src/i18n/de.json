@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Start",
+    "about": "Über uns",
+    "members": "Mitglieder",
+    "nextGigs": "Nächste",
+    "events": "Vergangene",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "tagline": "Kolumbianische Gaitas- und Trommelmusik in Berlin",
+    "location": "Berlin, Deutschland"
+  },
+  "about": {
+    "title": "Über uns",
+    "p1": "Ein Treffpunkt zur Bewahrung und Verbreitung des uralten Klangs der langen Gaitas aus Montes de María.",
+    "p2": "Gaita macho, gaita hembra, Trommeln und Maracas im traditionellen ländlichen Format, offen für neue musikalische Dialoge.",
+    "addPhoto": "Bandfoto"
+  },
+  "members": {
+    "title": "Mitglieder",
+    "member1": {
+      "instrument": "Gaita Macho"
+    },
+    "member2": {
+      "instrument": "Weibliche Stimme"
+    },
+    "member3": {
+      "instrument": "Tambora und Stimme"
+    },
+    "member4": {
+      "instrument": "Llamador"
+    },
+    "member5": {
+      "instrument": "Tambor Alegre"
+    },
+    "member6": {
+      "instrument": "Gaita Hembra und Musikalische Leitung"
+    }
+  },
+  "nextGigs": {
+    "title": "Nächste Auftritte",
+    "comingSoon": "Bald Verfügbar",
+    "stayTuned": "Bleiben Sie dran für kommende Auftritte"
+  },
+  "events": {
+    "title": "Vergangene Veranstaltungen",
+    "event1": {
+      "name": "SWEAT",
+      "description": "Live-Musik-Tanz-Ritual für den Geist des Wassers",
+      "date": "16.-17. August 2025",
+      "location": "MaHalla, Berlin"
+    },
+    "event2": {
+      "name": "La Sur Real Filmfestival",
+      "description": "CUMBÉ eröffnete das kolumbianische Filmfestival in Berlin",
+      "date": "2025",
+      "location": "Berlin"
+    }
+  },
+  "contact": {
+    "title": "Kontakt"
+  },
+  "footer": {
+    "text": "Traditionelle kolumbianische Musik in Berlin"
+  }
+}

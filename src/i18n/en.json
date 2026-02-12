@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "members": "Members",
+    "nextGigs": "Next Gigs",
+    "events": "Past Events",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Colombian gaitas and drums music in Berlin",
+    "location": "Berlin, Germany"
+  },
+  "about": {
+    "title": "About Us",
+    "p1": "A gathering space to preserve and spread the ancestral sound of the long gaitas from Montes de María.",
+    "p2": "Gaita macho, gaita hembra, drums and maracas in their traditional rural format, open to new musical dialogues.",
+    "addPhoto": "Band photo"
+  },
+  "members": {
+    "title": "Members",
+    "member1": {
+      "instrument": "Gaita Macho"
+    },
+    "member2": {
+      "instrument": "Female Voice"
+    },
+    "member3": {
+      "instrument": "Tambora and Voice"
+    },
+    "member4": {
+      "instrument": "Llamador"
+    },
+    "member5": {
+      "instrument": "Tambor Alegre"
+    },
+    "member6": {
+      "instrument": "Gaita Hembra and Musical Direction"
+    }
+  },
+  "nextGigs": {
+    "title": "Next Gigs",
+    "comingSoon": "Coming Soon",
+    "stayTuned": "Stay tuned for upcoming performances"
+  },
+  "events": {
+    "title": "Past Events",
+    "event1": {
+      "name": "SWEAT",
+      "description": "A Live Music Dance Ritual for the Spirit of Water",
+      "date": "August 16-17, 2025",
+      "location": "MaHalla, Berlin"
+    },
+    "event2": {
+      "name": "La Sur Real Film Festival",
+      "description": "CUMBÉ opened the Colombian film festival in Berlin",
+      "date": "2025",
+      "location": "Berlin"
+    }
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "footer": {
+    "text": "Traditional Colombian music in Berlin"
+  }
+}

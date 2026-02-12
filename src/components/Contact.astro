@@ -1,0 +1,60 @@
+---
+import { useTranslations } from '../i18n/utils';
+import type { Language } from '../i18n/utils';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="contact" class="section section-dark">
+  <div class="container">
+    <h2 class="section-title">{t('contact.title')}</h2>
+    <div class="contact-content">
+      <div class="contact-info">
+        <a href="mailto:ftrianakast@gmail.com" class="contact-link">
+          ftrianakast@gmail.com
+        </a>
+        <a href="https://instagram.com/cumbe_music" target="_blank" class="contact-link">
+          @cumbe_music
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-content {
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .contact-link {
+    font-size: 1.5rem;
+    color: var(--verde);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 1rem 2rem;
+    border: 2px solid var(--verde);
+    border-radius: 50px;
+    display: inline-block;
+  }
+
+  .contact-link:hover {
+    background-color: var(--verde);
+    color: var(--azul);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(195, 248, 140, 0.3);
+  }
+</style>

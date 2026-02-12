@@ -1,0 +1,91 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <slot />
+  <style is:global>
+    /* Color Palette */
+    :root {
+      --verde: #C3F88C;
+      --azul: #002D42;
+      --naranja: #D96518;
+      --blanco: #ffffff;
+      --gris-claro: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--azul);
+      color: var(--blanco);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Sections */
+    .section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-dark {
+      background-color: #001a28;
+    }
+
+    .section-title {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: var(--verde);
+      margin-bottom: 3rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section {
+        padding: 4rem 0;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</body>
+</html>

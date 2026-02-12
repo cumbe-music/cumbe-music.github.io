@@ -1,0 +1,100 @@
+---
+import { useTranslations } from '../i18n/utils';
+import type { Language } from '../i18n/utils';
+import ScrollArrow from './ScrollArrow.astro';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">{t('about.title')}</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>{t('about.p1')}</p>
+        <p>{t('about.p2')}</p>
+        <div class="social-links">
+          <a href="https://instagram.com/cumbe_music" target="_blank" class="social-btn">
+            <span>@cumbe_music</span>
+          </a>
+        </div>
+      </div>
+      <div class="about-image">
+        <img
+          src="/images/band/band.jpeg"
+          alt="CUMBÉ band"
+          class="band-photo"
+        />
+      </div>
+    </div>
+    <ScrollArrow targetSection="members" />
+  </div>
+</section>
+
+<style>
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--blanco);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .social-links {
+    margin-top: 2rem;
+  }
+
+  .social-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--naranja);
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+  }
+
+  .social-btn:hover {
+    background-color: var(--verde);
+    color: var(--azul);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(217, 101, 24, 0.3);
+  }
+
+  .about-image {
+    position: relative;
+  }
+
+  .band-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .band-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(195, 248, 140, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

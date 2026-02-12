@@ -1,0 +1,89 @@
+---
+import { useTranslations } from '../i18n/utils';
+import type { Language } from '../i18n/utils';
+import ScrollArrow from './ScrollArrow.astro';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const members = [
+  { name: 'Peter Schwarz', key: 'member1' },
+  { name: 'Silvia Sánchez', key: 'member2' },
+  { name: 'Felipe Duarte', key: 'member3' },
+  { name: 'Mauricio Prieto', key: 'member4' },
+  { name: 'Federico Hernández', key: 'member5' },
+  { name: 'Felipe Triana', key: 'member6' },
+];
+---
+
+<section id="members" class="section section-dark">
+  <div class="container">
+    <h2 class="section-title">{t('members.title')}</h2>
+    <div class="members-grid">
+      {members.map(member => (
+        <div class="member-card">
+          <div class="member-instrument">{t(`members.${member.key}.instrument`)}</div>
+          <h3 class="member-name">{member.name}</h3>
+        </div>
+      ))}
+    </div>
+    <ScrollArrow targetSection="events" />
+  </div>
+</section>
+
+<style>
+  .members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .member-card {
+    background: rgba(0, 45, 66, 0.5);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(195, 248, 140, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .member-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--verde);
+    box-shadow: 0 10px 30px rgba(195, 248, 140, 0.2);
+  }
+
+  .member-instrument {
+    color: var(--naranja);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .member-name {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: var(--verde);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .member-bio {
+    color: var(--blanco);
+    font-size: 0.95rem;
+    font-weight: 300;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .members-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
