@@ -19,18 +19,45 @@ const navItems = [
 ];
 ---
 
-<nav class="nav-menu">
-  {navItems.map(item => (
-    <a href={`#${item.id}`} class="nav-link" data-section={item.id}>
-      {item.label}
-    </a>
-  ))}
+<nav class="nav-menu" id="nav-menu">
+  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+    <span class="hamburger"></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    {navItems.map(item => (
+      <a href={`#${item.id}`} class="nav-link" data-section={item.id}>
+        {item.label}
+      </a>
+    ))}
+  </div>
 </nav>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const sections = ['hero', 'about', 'members', 'next-gigs', 'events', 'contact'];
     const navLinks = document.querySelectorAll('.nav-link');
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinksContainer = document.getElementById('nav-links');
+    const navMenu = document.getElementById('nav-menu');
+
+    // Toggle menu on mobile
+    menuToggle?.addEventListener('click', () => {
+      navMenu?.classList.toggle('open');
+    });
+
+    // Close menu when clicking a link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu?.classList.remove('open');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navMenu && !navMenu.contains(e.target as Node)) {
+        navMenu.classList.remove('open');
+      }
+    });
 
     function updateActiveLink() {
       const scrollPosition = window.scrollY + window.innerHeight / 3;
@@ -96,18 +123,87 @@ const navItems = [
     color: var(--azul);
   }
 
+  .menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+  }
+
+  .hamburger {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--verde);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background-color: var(--verde);
+    transition: all 0.3s ease;
+  }
+
+  .hamburger::before {
+    top: -8px;
+  }
+
+  .hamburger::after {
+    bottom: -8px;
+  }
+
+  .nav-menu.open .hamburger {
+    background-color: transparent;
+  }
+
+  .nav-menu.open .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .nav-menu.open .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+
   @media (max-width: 768px) {
     .nav-menu {
       top: 1rem;
       left: 1rem;
       flex-direction: column;
-      gap: 0.25rem;
-      padding: 0.25rem;
+      padding: 0.5rem;
+      gap: 0;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(195, 248, 140, 0.2);
+    }
+
+    .nav-menu.open .nav-links {
+      display: flex;
     }
 
     .nav-link {
-      padding: 0.4rem 0.8rem;
-      font-size: 0.8rem;
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+      width: 100%;
+      text-align: left;
     }
   }
 </style>
