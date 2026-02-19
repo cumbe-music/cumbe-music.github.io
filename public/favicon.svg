@@ -1,13 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&amp;display=swap');
-    .letter {
-      font-family: 'Montserrat Alternates', sans-serif;
-      font-weight: 900;
-      font-size: 96px;
-      fill: #C3F88C;
-    }
-  </style>
-  <rect width="128" height="128" fill="#002D42"/>
-  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" class="letter">C</text>
+  <rect width="128" height="128" rx="24" fill="#002D42"/>
+  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="central"
+    font-family="Arial Black, Arial, sans-serif"
+    font-weight="900"
+    font-size="96"
+    fill="#C3F88C">C</text>
 </svg>
