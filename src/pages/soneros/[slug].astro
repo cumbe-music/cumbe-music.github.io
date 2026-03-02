@@ -1,0 +1,218 @@
+---
+import { canciones, slugify, categorizarRitmo, RITMO_COLORES } from '../../data/repertorio.js';
+
+export function getStaticPaths() {
+  return canciones.map(cancion => ({
+    params: { slug: slugify(cancion.titulo) },
+    props: { cancion },
+  }));
+}
+
+const { cancion } = Astro.props;
+
+// Formatear letra en el servidor
+function formatearLetra(texto) {
+  return texto
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/\[([^\]]+)\]/g, '<span class="seccion-label">[$1]</span>');
+}
+
+// Badges con color para el servidor
+const badgeParts = cancion.ritmo.split('·').map(s => s.trim());
+const badges = badgeParts.map(parte => {
+  const cat = categorizarRitmo(parte)[0];
+  const color = RITMO_COLORES[cat];
+  return { label: parte, color };
+});
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>{cancion.titulo} · CUMBÉ</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=6" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde: #C3F88C;
+      --azul: #002D42;
+      --azul-dark: #001a28;
+      --naranja: #D96518;
+      --blanco: #ffffff;
+      --font-head: 'Montserrat Alternates', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--azul-dark);
+      color: var(--blanco);
+      min-height: 100vh;
+    }
+
+    #app {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    /* Back nav */
+    .back-nav {
+      margin-bottom: 3rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--verde); }
+
+    .back-arrow {
+      font-size: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .back-link:hover .back-arrow { transform: translateX(-3px); }
+
+    /* Song header */
+    .song-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .rhythms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .rhythm-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+      border: 1px solid;
+      background: transparent;
+      opacity: 0.85;
+    }
+
+    .song-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      font-weight: 900;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .song-alias {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.38);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .song-autor {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin: 2rem 0;
+    }
+
+    /* Letra */
+    .letra-section pre {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 2;
+      white-space: pre-wrap;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .seccion-label {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--verde);
+      opacity: 0.6;
+    }
+
+    .sin-letra {
+      color: rgba(255,255,255,0.25);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app" style="display:none">
+    <nav class="back-nav">
+      <a href="/soneros" class="back-link">
+        <span class="back-arrow">←</span> Repertorio
+      </a>
+    </nav>
+
+    <header class="song-header">
+      <div class="rhythms">
+        {badges.map(b => (
+          <span class="rhythm-badge" style={`color:${b.color};border-color:${b.color}`}>
+            {b.label}
+          </span>
+        ))}
+      </div>
+
+      <h1 class="song-title">{cancion.titulo}</h1>
+
+      {cancion.aliases.length > 0 && (
+        <p class="song-alias">también: {cancion.aliases.join(' / ')}</p>
+      )}
+
+      {cancion.autor && (
+        <p class="song-autor">{cancion.autor}</p>
+      )}
+    </header>
+
+    <hr class="divider" />
+
+    {cancion.letra ? (
+      <div class="letra-section">
+        <pre set:html={formatearLetra(cancion.letra)} />
+      </div>
+    ) : (
+      <p class="sin-letra">Sin letra por el momento.</p>
+    )}
+  </div>
+
+  <script is:inline>
+    // Si no hay sesión activa, volver a /soneros para autenticarse
+    if (sessionStorage.getItem('cumbe-soneros') !== '1') {
+      window.location.replace('/soneros');
+    } else {
+      document.getElementById('app').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

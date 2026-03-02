@@ -1,0 +1,661 @@
+---
+// Repertorio privado de CUMBÉ · /soneros
+// Solo comparte este link con la banda
+import { canciones, slugify } from '../data/repertorio.js';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Soneros · CUMBÉ</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=6" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style is:global>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde: #C3F88C;
+      --azul: #002D42;
+      --azul-dark: #001a28;
+      --naranja: #D96518;
+      --blanco: #ffffff;
+      --font-head: 'Montserrat Alternates', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--azul-dark);
+      color: var(--blanco);
+      min-height: 100vh;
+    }
+
+    /* ——— OVERLAY ——— */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--azul-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .lock-box {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .lock-logo {
+      font-family: var(--font-head);
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--verde);
+      letter-spacing: 0.15em;
+    }
+
+    .lock-subtitle {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.9rem;
+    }
+
+    .input-group {
+      display: flex;
+      border: 2px solid var(--verde);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .input-group input {
+      background: transparent;
+      border: none;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      font-family: var(--font-body);
+      outline: none;
+      width: 200px;
+    }
+
+    .input-group input::placeholder { color: rgba(255,255,255,0.3); }
+
+    .input-group button {
+      background: var(--verde);
+      border: none;
+      color: var(--azul);
+      padding: 0 1.25rem;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: var(--font-body);
+    }
+
+    .input-group button:hover { background: #a8e070; }
+
+    .error-msg {
+      color: #FF7B7B;
+      font-size: 0.85rem;
+      min-height: 1.2em;
+    }
+
+    /* ——— APP ——— */
+    .app {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    /* Header */
+    .page-header {
+      text-align: center;
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid rgba(195,248,140,0.15);
+      margin-bottom: 2.5rem;
+    }
+
+    .page-header h1 {
+      font-family: var(--font-head);
+      font-size: 2.8rem;
+      color: var(--verde);
+      font-weight: 900;
+      letter-spacing: 0.15em;
+    }
+
+    .page-header p {
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-item {
+      background: rgba(195,248,140,0.06);
+      border: 1px solid rgba(195,248,140,0.18);
+      border-radius: 10px;
+      padding: 0.75rem 1.25rem;
+      text-align: center;
+      min-width: 80px;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      color: var(--verde);
+      line-height: 1;
+    }
+
+    .stat-item span {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Search */
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .search-input {
+      background: rgba(255,255,255,0.05);
+      border: 1.5px solid rgba(255,255,255,0.14);
+      border-radius: 10px;
+      color: white;
+      padding: 0.65rem 2.75rem 0.65rem 1.25rem;
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+      width: 100%;
+      max-width: 460px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus { border-color: rgba(195,248,140,0.35); }
+    .search-input::placeholder { color: rgba(255,255,255,0.28); }
+
+    .search-clear {
+      position: absolute;
+      right: calc(50% - 230px + 0.75rem);
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.35);
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      display: none;
+    }
+
+    .search-clear:hover { color: rgba(255,255,255,0.7); }
+
+    /* Filters */
+    .filters-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.55);
+      padding: 0.4rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover { border-color: var(--verde); color: var(--verde); }
+
+    .filter-btn.active {
+      background: var(--verde);
+      border-color: var(--verde);
+      color: var(--azul);
+      font-weight: 600;
+    }
+
+    /* Sections */
+    .repertoire-section { margin-bottom: 4.5rem; }
+
+    .section-heading {
+      font-family: var(--font-head);
+      font-size: 1.35rem;
+      color: var(--blanco);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .count-badge {
+      background: var(--naranja);
+      color: white;
+      font-size: 0.78rem;
+      font-family: var(--font-body);
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    /* Songs grid */
+    .songs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1rem;
+    }
+
+    /* Song card — es un <a> link */
+    .song-card {
+      display: block;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.2s, background 0.2s;
+    }
+
+    .song-card:hover {
+      border-color: rgba(195,248,140,0.3);
+      background: rgba(255,255,255,0.07);
+      transform: translateY(-2px);
+    }
+
+    .card-body { padding: 1.25rem 1.25rem 1rem; }
+
+    .rhythms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .rhythm-badge {
+      font-size: 0.67rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid;
+      background: transparent;
+      opacity: 0.85;
+    }
+
+    .song-title {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.25;
+    }
+
+    .song-alias {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.38);
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    .song-autor {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.48);
+      margin-top: 0.6rem;
+    }
+
+    /* Footer de la card */
+    .card-footer {
+      padding: 0 1.25rem 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .tiene-letra {
+      font-size: 0.72rem;
+      color: var(--verde);
+      opacity: 0.7;
+      font-weight: 500;
+    }
+
+    .card-arrow {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.25);
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .song-card:hover .card-arrow {
+      color: var(--verde);
+      transform: translateX(3px);
+    }
+
+    /* Por aprender */
+    #section-aprender .song-card {
+      background: rgba(217,101,24,0.06);
+      border-color: rgba(217,101,24,0.18);
+    }
+
+    #section-aprender .song-card:hover {
+      border-color: rgba(217,101,24,0.4);
+      background: rgba(217,101,24,0.1);
+    }
+
+    /* Footer */
+    .page-footer {
+      text-align: center;
+      color: rgba(255,255,255,0.2);
+      font-size: 0.78rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    @media (max-width: 600px) {
+      .songs-grid { grid-template-columns: 1fr; }
+      .page-header h1 { font-size: 2.2rem; }
+      .stat-item { min-width: 70px; padding: 0.6rem 1rem; }
+      .stat-item strong { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ——— Contraseña ——— -->
+  <div id="overlay" class="overlay">
+    <div class="lock-box">
+      <div class="lock-logo">CUMBÉ</div>
+      <p class="lock-subtitle">Zona privada · Solo para la banda</p>
+      <div class="input-group">
+        <input type="password" id="pwd" placeholder="Contraseña" autocomplete="off" />
+        <button id="enter-btn">Entrar</button>
+      </div>
+      <p id="error-msg" class="error-msg"></p>
+    </div>
+  </div>
+
+  <!-- ——— Contenido ——— -->
+  <div id="app" class="app" style="display:none">
+    <header class="page-header">
+      <h1>CUMBÉ</h1>
+      <p>Repertorio de la banda</p>
+    </header>
+
+    <div class="stats-bar">
+      <div class="stat-item"><strong>34</strong><span>Canciones</span></div>
+      <div class="stat-item"><strong>14</strong><span>Gaitas</span></div>
+      <div class="stat-item"><strong>9</strong><span>Puyas</span></div>
+      <div class="stat-item"><strong>7</strong><span>Porros</span></div>
+      <div class="stat-item"><strong>4</strong><span>Cumbias</span></div>
+      <div class="stat-item"><strong>2</strong><span>Merengues</span></div>
+    </div>
+
+    <div class="search-bar">
+      <input class="search-input" id="search-input" type="search" placeholder="Buscar canción, autor, ritmo..." autocomplete="off" />
+      <button class="search-clear" id="search-clear" aria-label="Limpiar">✕</button>
+    </div>
+
+    <div class="filters-bar">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="gaita-corrida">Gaita Corrida</button>
+      <button class="filter-btn" data-filter="porro">Porro</button>
+      <button class="filter-btn" data-filter="cumbia">Cumbia</button>
+      <button class="filter-btn" data-filter="puya">Puya</button>
+      <button class="filter-btn" data-filter="merengue">Merengue</button>
+      <button class="filter-btn" data-filter="otros">Otros</button>
+    </div>
+
+    <main>
+      <section id="section-ensayado" class="repertoire-section">
+        <h2 class="section-heading">
+          Repertorio Ensayado
+          <span class="count-badge" id="count-ensayado">18</span>
+        </h2>
+        <div class="songs-grid" id="grid-ensayado"></div>
+      </section>
+
+      <section id="section-podriamos" class="repertoire-section">
+        <h2 class="section-heading">
+          Podríamos Tocar
+          <span class="count-badge" id="count-podriamos">15</span>
+        </h2>
+        <div class="songs-grid" id="grid-podriamos"></div>
+      </section>
+
+      <section id="section-aprender" class="repertoire-section">
+        <h2 class="section-heading">
+          Por Aprender
+          <span class="count-badge" id="count-aprender">4</span>
+        </h2>
+        <div class="songs-grid" id="grid-aprender"></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>CUMBÉ · Berlín · 2026</p>
+    </footer>
+  </div>
+
+  <script is:inline define:vars={{ canciones }}>
+    // ————————————————————————————————————————
+    // CONTRASEÑA
+    // Para cambiarla: reemplaza PASS_HASH por btoa("nueva-contraseña")
+    // Contraseña actual: gaita
+    // ————————————————————————————————————————
+    const PASS_HASH = "Z2FpdGE=";
+
+    const RITMO_COLORES = {
+      'gaita-corrida': '#C3F88C',
+      'porro':         '#D96518',
+      'cumbia':        '#5BC4F0',
+      'puya':          '#FF7B7B',
+      'merengue':      '#FFD166',
+      'vallenato':     '#C77DFF',
+      'otros':         'rgba(255,255,255,0.45)',
+    };
+
+    function slugify(str) {
+      return str
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[¿?¡!·]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z0-9-]/g, '')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+    }
+
+    function categorizarRitmo(ritmo) {
+      const r = ritmo.toLowerCase();
+      const cats = [];
+      if (r.includes('gaita')) cats.push('gaita-corrida');
+      if (r.includes('porro')) cats.push('porro');
+      if (r.includes('cumbia')) cats.push('cumbia');
+      if (r.includes('puya')) cats.push('puya');
+      if (r.includes('merengue')) cats.push('merengue');
+      if (r.includes('vallenato')) cats.push('vallenato');
+      if (r.includes('bullerengue') || r.includes('paseo') || r.includes('samba') ||
+          r.includes('jaláo') || r.includes('jalao') || r.includes('danza') || r.includes('6/8')) {
+        cats.push('otros');
+      }
+      if (cats.length === 0) cats.push('otros');
+      return [...new Set(cats)];
+    }
+
+    // ————————————————————————————————————————
+    // CONTRASEÑA
+    // ————————————————————————————————————————
+    const cancionesData = canciones; // inyectado por define:vars
+
+    const overlay  = document.getElementById('overlay');
+    const app      = document.getElementById('app');
+    const pwdInput = document.getElementById('pwd');
+    const enterBtn = document.getElementById('enter-btn');
+    const errorMsg = document.getElementById('error-msg');
+
+    function verificar() {
+      if (btoa(pwdInput.value) === PASS_HASH) {
+        overlay.style.display = 'none';
+        app.style.display = 'block';
+        sessionStorage.setItem('cumbe-soneros', '1');
+        renderTodo();
+      } else {
+        errorMsg.textContent = 'Contraseña incorrecta...';
+        pwdInput.value = '';
+        pwdInput.focus();
+        setTimeout(() => { errorMsg.textContent = ''; }, 3000);
+      }
+    }
+
+    enterBtn.addEventListener('click', verificar);
+    pwdInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') verificar(); });
+
+    if (sessionStorage.getItem('cumbe-soneros') === '1') {
+      overlay.style.display = 'none';
+      app.style.display = 'block';
+      renderTodo();
+    }
+
+    // ————————————————————————————————————————
+    // RENDERIZADO
+    // ————————————————————————————————————————
+    function renderTodo() {
+      renderSeccion('ensayado');
+      renderSeccion('podriamos');
+      renderSeccion('aprender');
+      iniciarFiltros();
+    }
+
+    function renderSeccion(seccion) {
+      const grid = document.getElementById('grid-' + seccion);
+      const lista = cancionesData.filter(c => c.seccion === seccion);
+      grid.innerHTML = '';
+      lista.forEach(cancion => grid.appendChild(crearCard(cancion)));
+    }
+
+    function crearCard(cancion) {
+      const slug = slugify(cancion.titulo);
+      const categorias = categorizarRitmo(cancion.ritmo);
+
+      const card = document.createElement('a');
+      card.href = '/soneros/' + slug;
+      card.className = 'song-card';
+      card.dataset.cats = categorias.join(' ');
+      card.dataset.busqueda = [cancion.titulo, ...cancion.aliases, cancion.autor, cancion.ritmo]
+        .join(' ').toLowerCase();
+
+      const partes = cancion.ritmo.split('·').map(s => s.trim());
+      const badgesHtml = partes.map(parte => {
+        const cat = categorizarRitmo(parte)[0];
+        const color = RITMO_COLORES[cat];
+        return `<span class="rhythm-badge" style="color:${color};border-color:${color}">${parte}</span>`;
+      }).join('');
+
+      const aliasHtml = cancion.aliases.length
+        ? `<p class="song-alias">también: ${cancion.aliases.join(' / ')}</p>`
+        : '';
+
+      const autorHtml = cancion.autor
+        ? `<p class="song-autor">${cancion.autor}</p>`
+        : '';
+
+      const tieneLetraHtml = cancion.letra
+        ? `<span class="tiene-letra">Tiene letra</span>`
+        : `<span></span>`;
+
+      card.innerHTML = `
+        <div class="card-body">
+          <div class="rhythms">${badgesHtml}</div>
+          <h3 class="song-title">${cancion.titulo}</h3>
+          ${aliasHtml}
+          ${autorHtml}
+        </div>
+        <div class="card-footer">
+          ${tieneLetraHtml}
+          <span class="card-arrow">→</span>
+        </div>
+      `;
+
+      return card;
+    }
+
+    // ————————————————————————————————————————
+    // FILTROS + BÚSQUEDA
+    // ————————————————————————————————————————
+    let filtroActivo = 'all';
+    let terminoBusqueda = '';
+
+    function iniciarFiltros() {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          filtroActivo = btn.dataset.filter;
+          actualizarVista();
+        });
+      });
+
+      const searchInput = document.getElementById('search-input');
+      const searchClear = document.getElementById('search-clear');
+
+      searchInput.addEventListener('input', () => {
+        terminoBusqueda = searchInput.value.trim().toLowerCase();
+        searchClear.style.display = terminoBusqueda ? 'block' : 'none';
+        actualizarVista();
+      });
+
+      searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        terminoBusqueda = '';
+        searchClear.style.display = 'none';
+        searchInput.focus();
+        actualizarVista();
+      });
+    }
+
+    function actualizarVista() {
+      document.querySelectorAll('.song-card').forEach(card => {
+        const pasaFiltro = filtroActivo === 'all' || card.dataset.cats.split(' ').includes(filtroActivo);
+        const pasaBusqueda = !terminoBusqueda || card.dataset.busqueda.includes(terminoBusqueda);
+        card.style.display = (pasaFiltro && pasaBusqueda) ? '' : 'none';
+      });
+
+      ['ensayado', 'podriamos', 'aprender'].forEach(sec => {
+        const section = document.getElementById('section-' + sec);
+        const visibles = section.querySelectorAll('.song-card:not([style*="none"])').length;
+        section.style.display = visibles === 0 ? 'none' : '';
+      });
+    }
+  </script>
+
+</body>
+</html>
