@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* The browser shows a 540×960 preview; the canvas is the real 1080×1920 */
+    html, body {
+      width: 540px;
+      height: 960px;
+      overflow: hidden;
+      background: #002D42;
+    }
+
+    .canvas {
+      width: 1080px;
+      height: 1920px;
+      transform: scale(0.5);
+      transform-origin: top left;
+      background: linear-gradient(160deg, #002D42 0%, #003d5c 55%, #001a28 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      gap: 0;
+    }
+
+    .glow-orange {
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217, 101, 24, 0.2) 0%, transparent 70%);
+      top: 5%;
+      left: -25%;
+      pointer-events: none;
+    }
+    .glow-green {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(195, 248, 140, 0.09) 0%, transparent 70%);
+      bottom: 10%;
+      right: -20%;
+      pointer-events: none;
+    }
+
+    .main {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 80px;
+    }
+
+    .brand {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 900;
+      font-size: 200px;
+      color: #C3F88C;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-shadow: 0 0 100px rgba(195, 248, 140, 0.4);
+    }
+
+    .tagline {
+      font-weight: 400;
+      font-size: 32px;
+      color: #ffffff;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-top: 30px;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    .location {
+      font-weight: 600;
+      font-size: 38px;
+      color: #D96518;
+      letter-spacing: 0.1em;
+      margin-top: 16px;
+    }
+
+    .divider {
+      width: 2px;
+      height: 140px;
+      background: linear-gradient(to bottom, transparent, rgba(195, 248, 140, 0.45), transparent);
+      margin: 80px auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-block {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-label {
+      font-weight: 300;
+      font-size: 32px;
+      color: rgba(255, 255, 255, 0.55);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .cta-url {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 700;
+      font-size: 46px;
+      color: #C3F88C;
+      letter-spacing: 0.06em;
+      border: 2px solid rgba(195, 248, 140, 0.35);
+      border-radius: 80px;
+      padding: 28px 80px;
+      display: inline-block;
+      text-shadow: 0 0 30px rgba(195, 248, 140, 0.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="glow-orange"></div>
+    <div class="glow-green"></div>
+
+    <div class="main">
+      <div class="brand">CUMBÉ</div>
+      <div class="tagline">Colombian gaitas and drums<br>music in Berlin</div>
+      <div class="location">Berlin, Germany</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="cta-block">
+      <div class="cta-label">Visit our new website</div>
+      <div class="cta-url">cumbe-music.github.io</div>
+    </div>
+  </div>
+</body>
+</html>

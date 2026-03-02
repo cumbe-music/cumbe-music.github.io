@@ -81,15 +81,20 @@ const t = useTranslations(lang);
 
   .band-photo {
     width: 100%;
-    height: auto;
+    height: 480px;
+    object-fit: cover;
+    object-position: center 40%;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(195, 248, 140, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(195, 248, 140, 0.05);
+    filter: brightness(0.95);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   }
 
   .band-photo:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(195, 248, 140, 0.2);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(195, 248, 140, 0.15);
+    filter: brightness(1);
   }
 
   @media (max-width: 768px) {

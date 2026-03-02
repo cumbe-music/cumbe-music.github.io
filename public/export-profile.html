@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+    }
+
+    body {
+      background: linear-gradient(135deg, #002D42 0%, #003d5c 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(217, 101, 24, 0.12) 0%, transparent 55%),
+        radial-gradient(circle at 80% 75%, rgba(195, 248, 140, 0.06) 0%, transparent 55%);
+    }
+
+    .content {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      /* small nudge up to optically center — large fonts sit visually low */
+      transform: translateY(-2%);
+    }
+
+    .brand {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 900;
+      font-size: 220px;
+      color: #C3F88C;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-shadow: 0 0 80px rgba(195, 248, 140, 0.35);
+    }
+
+    .tagline {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 26px;
+      color: #ffffff;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-top: 20px;
+      opacity: 0.85;
+    }
+
+    .location {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      color: #D96518;
+      letter-spacing: 0.1em;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="brand">CUMBÉ</div>
+    <div class="tagline">Colombian gaitas and drums music in Berlin</div>
+    <div class="location">Berlin, Germany</div>
+  </div>
+</body>
+</html>

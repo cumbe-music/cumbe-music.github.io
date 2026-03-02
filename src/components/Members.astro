@@ -11,12 +11,12 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const members = [
-  { name: 'Peter Schwarz', key: 'member1' },
-  { name: 'Silvia Sánchez', key: 'member2' },
-  { name: 'Felipe Duarte', key: 'member3' },
-  { name: 'Mauricio Prieto', key: 'member4' },
-  { name: 'Federico Hernández', key: 'member5' },
-  { name: 'Felipe Triana', key: 'member6' },
+  { name: 'Peter Schwarz', key: 'member1', image: '/images/members/peter.jpeg', imagePos: 'center 25%' },
+  { name: 'Silvia Sánchez', key: 'member2', image: '/images/members/silvia.jpeg', imagePos: 'center top' },
+  { name: 'Felipe Duarte', key: 'member3', image: '/images/members/felipe_duarte.jpeg', imagePos: 'center top' },
+  { name: 'Mauricio Prieto', key: 'member4', image: '/images/members/mauricio.jpeg', imagePos: 'center top' },
+  { name: 'Federico Hernández', key: 'member5', image: '/images/members/federico.jpeg', imagePos: 'center top' },
+  { name: 'Felipe Triana', key: 'member6', image: '/images/members/felipe_triana.jpeg', imagePos: 'center 15%' },
 ];
 ---
 
@@ -26,6 +26,11 @@ const members = [
     <div class="members-grid">
       {members.map(member => (
         <div class="member-card">
+          {member.image && (
+            <div class="member-image-wrapper">
+              <img class="member-image" src={member.image} alt={member.name} style={`object-position: ${member.imagePos}`} />
+            </div>
+          )}
           <div class="member-instrument">{t(`members.${member.key}.instrument`)}</div>
           <h3 class="member-name">{member.name}</h3>
         </div>
@@ -55,6 +60,34 @@ const members = [
     transform: translateY(-5px);
     border-color: var(--verde);
     box-shadow: 0 10px 30px rgba(195, 248, 140, 0.2);
+  }
+
+  .member-image-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(195, 248, 140, 0.3);
+    box-shadow: 0 0 20px rgba(195, 248, 140, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .member-card:hover .member-image-wrapper {
+    border-color: var(--verde);
+    box-shadow: 0 0 30px rgba(195, 248, 140, 0.25);
+  }
+
+  .member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.7) brightness(0.9);
+    transition: filter 0.3s ease;
+  }
+
+  .member-card:hover .member-image {
+    filter: saturate(1) brightness(1);
   }
 
   .member-instrument {
