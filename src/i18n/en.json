@@ -41,7 +41,13 @@
   "nextGigs": {
     "title": "Next Gigs",
     "comingSoon": "Coming Soon",
-    "stayTuned": "Stay tuned for upcoming performances"
+    "stayTuned": "Stay tuned for upcoming performances",
+    "event1": {
+      "name": "A Call to the Heart - International Day of Water",
+      "description": "Join us for a FREE celebration with live traditional Colombian music, eco somatic practice, water chanting (cantoalagua), and energetic cleansing by the Spree River",
+      "date": "Sunday, March 22, 2026 • 10:30 - 13:30",
+      "location": "Berlin Plänterwald • Spreepark Art Space"
+    }
   },
   "events": {
     "title": "Past Events",

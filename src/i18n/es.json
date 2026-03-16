@@ -41,7 +41,13 @@
   "nextGigs": {
     "title": "Próximas Presentaciones",
     "comingSoon": "Muy Pronto",
-    "stayTuned": "Mantente atento a nuestras próximas presentaciones"
+    "stayTuned": "Mantente atento a nuestras próximas presentaciones",
+    "event1": {
+      "name": "Un Llamado al Corazón - Día Internacional del Agua",
+      "description": "Únete a esta celebración GRATUITA con música tradicional colombiana en vivo, práctica eco somática, canto al agua (cantoalagua) y limpieza energética junto al río Spree",
+      "date": "Domingo 22 de marzo, 2026 • 10:30 - 13:30",
+      "location": "Berlín Plänterwald • Spreepark Art Space"
+    }
   },
   "events": {
     "title": "Eventos Pasados",

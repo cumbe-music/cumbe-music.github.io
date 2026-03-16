@@ -41,7 +41,13 @@
   "nextGigs": {
     "title": "Nächste Auftritte",
     "comingSoon": "Bald Verfügbar",
-    "stayTuned": "Bleiben Sie dran für kommende Auftritte"
+    "stayTuned": "Bleiben Sie dran für kommende Auftritte",
+    "event1": {
+      "name": "Ein Ruf ans Herz - Internationaler Tag des Wassers",
+      "description": "Nehmen Sie an dieser KOSTENLOSEN Feier teil mit traditioneller kolumbianischer Live-Musik, öko-somatischer Praxis, Wassergesang (cantoalagua) und energetischer Reinigung am Spreeufer",
+      "date": "Sonntag, 22. März 2026 • 10:30 - 13:30",
+      "location": "Berlin Plänterwald • Spreepark Art Space"
+    }
   },
   "events": {
     "title": "Vergangene Veranstaltungen",
