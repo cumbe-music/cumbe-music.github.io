@@ -62,6 +62,12 @@
       "description": "CUMBÉ abrió el festival de cine colombiano en Berlín",
       "date": "Noviembre 18, 2025",
       "location": "Berlín"
+    },
+    "event3": {
+      "name": "Un Llamado al Corazón - Día Internacional del Agua",
+      "description": "Celebración gratuita con música tradicional colombiana en vivo, práctica eco somática, canto al agua (cantoalagua) y limpieza energética junto al río Spree",
+      "date": "22 de marzo, 2026",
+      "location": "Berlín Plänterwald • Spreepark Art Space"
     }
   },
   "contact": {

@@ -62,6 +62,12 @@
       "description": "CUMBÉ opened the Colombian film festival in Berlin",
       "date": "November 18, 2025",
       "location": "Berlin"
+    },
+    "event3": {
+      "name": "A Call to the Heart - International Day of Water",
+      "description": "Free celebration with live traditional Colombian music, eco somatic practice, water chanting (cantoalagua), and energetic cleansing by the Spree River",
+      "date": "March 22, 2026",
+      "location": "Berlin Plänterwald • Spreepark Art Space"
     }
   },
   "contact": {

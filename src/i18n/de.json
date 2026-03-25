@@ -62,6 +62,12 @@
       "description": "CUMBÉ eröffnete das kolumbianische Filmfestival in Berlin",
       "date": "18. November 2025",
       "location": "Berlin"
+    },
+    "event3": {
+      "name": "Ein Ruf ans Herz - Internationaler Tag des Wassers",
+      "description": "Kostenlose Feier mit traditioneller kolumbianischer Live-Musik, öko-somatischer Praxis, Wassergesang (cantoalagua) und energetischer Reinigung am Spreeufer",
+      "date": "22. März 2026",
+      "location": "Berlin Plänterwald • Spreepark Art Space"
     }
   },
   "contact": {
