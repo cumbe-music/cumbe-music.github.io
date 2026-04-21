@@ -212,6 +212,39 @@ const badges = badgeParts.map(parte => {
     } else {
       document.getElementById('app').style.display = 'block';
     }
+
+    // ————————————————————————————————————————
+    // WAKE LOCK - Mantener la pantalla encendida
+    // ————————————————————————————————————————
+    let wakeLock = null;
+
+    async function requestWakeLock() {
+      try {
+        if ('wakeLock' in navigator) {
+          wakeLock = await navigator.wakeLock.request('screen');
+          console.log('Wake Lock activado - la pantalla no se apagará');
+
+          // Cuando el wake lock se suelta (ej: cambio de pestaña)
+          wakeLock.addEventListener('release', () => {
+            console.log('Wake Lock liberado');
+          });
+        }
+      } catch (err) {
+        console.error('Error al activar Wake Lock:', err);
+      }
+    }
+
+    // Re-activar wake lock cuando vuelves a la pestaña
+    document.addEventListener('visibilitychange', async () => {
+      if (wakeLock !== null && document.visibilityState === 'visible') {
+        await requestWakeLock();
+      }
+    });
+
+    // Activar wake lock al cargar la página
+    if (sessionStorage.getItem('cumbe-soneros') === '1') {
+      requestWakeLock();
+    }
   </script>
 
 </body>

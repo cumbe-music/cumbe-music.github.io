@@ -613,6 +613,87 @@ P: Con versos y son
 R: Que se arme la puya`,
   },
 
+  {
+    titulo: "Aguacero e' Mayo",
+    aliases: [],
+    ritmo: "Cumbia",
+    autor: "Totó La Momposina",
+    seccion: "ensayado",
+    letra: `[Coro]
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+
+[Verso 1]
+Bonita tu casa e' palma
+Bonita tu casa e' palma
+Bonita tu varazón
+Bonita tu varazón
+Bonita la que esta adentro que me parte el corazón
+Bonita la que esta adentro que me parte el corazón
+
+[Coro]
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+
+[Verso 2]
+Mañana cuando me vaya, mañana cuando me vaya
+Quien se acordara de mi, quien se acordara de mi
+Solamente la tinaja, por el agua que bebí
+Solamente la tinaja, por el agua que bebí
+
+[Coro]
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+
+[Verso 3]
+Alevantate catano, alevantate catano
+Son la 5 e' la mañana, son las 5 e' la mañana
+Alevantate temprano, que es Totó la que te llama
+Alevantate temprano, que es Totó la que te llama
+
+[Coro]
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+
+[Verso 4]
+Bonita la mañanita, bonita la mañanita
+Cuando viene amaneciendo, cuando viene amaneciendo
+Los gallos merodeando y los trapiches moliendo
+Los gallos merodeando y los trapiches moliendo
+
+[Coro]
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer
+Aguacero e' mayo, dejalo caer`,
+  },
+
+  {
+    titulo: "La Muerte",
+    aliases: [],
+    ritmo: "Gaita Corrida",
+    autor: "Toño Fernández",
+    seccion: "ensayado",
+    letra: null,
+  },
+
+  {
+    titulo: "La Rebuscona",
+    aliases: [],
+    ritmo: "Cumbia de millo",
+    autor: "Pedro Ramayá",
+    seccion: "ensayado",
+    letra: null,
+  },
+
   // ——— PODRÍAMOS TOCAR (15) ———
 
   {
