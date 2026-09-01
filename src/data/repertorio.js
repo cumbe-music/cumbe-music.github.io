@@ -1174,6 +1174,119 @@ Arró ró decía mi madre cuando me quería callar
 Arró rró mamá, arró arró mamá...`,
   },
   {
+    titulo: "El Agua Se Va Acaba'",
+    aliases: [],
+    ritmo: "Chalupa",
+    autor: "Grupo Enkelé",
+    seccion: "aprender",
+    letra: `Si me dicen por aquí
+Si me cuentan por allá
+Si me dicen por aquí
+Si me cuentan por allá
+La gente viene diciendo, Que el agua se va a acaba
+
+Ay que se acaba que se acaba
+El agua se va acaba'
+Ay que se acaba que se acaba
+El agua se va acaba'
+Ay que se acaba en Santander
+El agua se va acaba'
+Ay que se acaba en Santander
+El agua se va acaba'
+Ay que se acaba tamborera
+El agua se va acaba'
+Ay que se acaba tamborera
+El agua se va acaba
+Ay que se acaba el Magdalena
+El agua se va acaba
+Ay que se acaba el Magdalena
+El agua se va acaba'
+Señoras que vamos a hacer
+El agua se va acaba'
+Señoras que vamos a hacer
+El agua se va acaba'
+Ay que se acaba toda el agua
+El agua se va acaba'
+Ay que se acaba toda el agua
+El agua se va acaba'
+Repiquen cueros tamboleras
+El agua se va acaba'
+Repiquen cueros tamboleras
+El agua se va acaba'
+Ay que se acaban todos los ríos
+El agua se va acaba'
+Ay que se acaban todos los ríos
+El agua se va acaba'
+Ay que se acaban todos los mares
+El agua se va acaba'
+Ay que se acaban todos los mares
+El agua se va acaba'
+Ay que se acaba toda el agua
+El agua se va acaba'
+Ay que se acaba toda el agua
+El agua se va acaba'
+Señores que vamos a hacer
+El agua se va acaba'
+Señoras que vamos a hacer
+El agua se va acaba'
+Ay si se acaba yo me muero
+El agua se va acaba'
+Esto nos lo han dicho muchas veces
+El agua se va acaba'
+Pero lo vamos a seguir diciendo
+El agua se va acaba'
+Hasta que todo el mundo entienda
+El agua se va acaba'
+Oyelo Talaigua
+El agua se va acaba'
+Oyelo cultura anfibia
+El agua se va acaba'
+Repiquen cueros tamboleras
+El agua se va acaba'
+Repiquen cueros tamboleras
+El agua se va acaba'
+Ay si se acaba yo me muero
+El agua se va acaba'
+Ay que se acaba usted también
+El agua se va acaba'
+Repiquen cueros tamboleras
+El agua se va acaba'
+Repiquen cueros tamboleras
+El agua se va acaba'
+Ay que se acaba toda el agua
+El agua se va acaba'
+Ay que se acaba toda el agua
+El agua se va acaba'
+Ay que se acaba allá en Pelaya
+El agua se va acaba'
+Ay que se acaba allá en Gamarra
+El agua se va acaba'
+Ay que se acaba el Magdalena
+El agua se va acaba'
+Ay que se acaba el Magdalena
+El agua se va acaba'
+Ay que se acaba maraquera
+El agua se va acaba'
+Ay que se acaba maraquera
+El agua se va acaba'
+Ay si se acaba yo me muero
+El agua se va acaba'
+Ay que se acaba usted también
+El agua se va acaba'
+Ay que se acaba toda el agua
+El agua se va acaba'
+Ay que se acaba toda el agua
+El agua se va acaba'
+Ay que se acaba en Venezuela
+El agua se va acaba'
+Ay que se acaba en Santander
+El agua se va acaba'
+Ay que se acaba esta canción
+El agua se va acaba'
+Ay que se acaba y se acabó
+El agua se va acaba'`,
+  },
+  {
     titulo: "El Mundo al Revés",
     aliases: [],
     ritmo: "Paseo",
