@@ -923,6 +923,55 @@ Ay, conmigo que nadie se meta.
 oye, conmigo que nadie se meta.`,
   },
   {
+    titulo: "Colombia sin Panamá",
+    aliases: [],
+    ritmo: "Bullerengue Sentao",
+    autor: 'Camilo Rodríguez "Niño Lento"',
+    seccion: "aprender",
+    letra: `En 1903 quedó Colombia sin Panamá
+En 1903 quedó Colombia sin Panamá
+yeleeeeeeee Coloooooombiaaaaaaa,
+Colombia sin Panamá
+
+[Llamada y respuesta — Coro: "Colombia sin Panamá"]
+Señores quedó Clombia
+Señores quedó Clombia
+Colombia sin Panamá
+Colombia sin Panamá
+Pues la gente de Jamaica
+Pues la gente de Jamaica
+Que le tocó trabajar
+Que le tocó trabajar
+Señores quedó Clombia
+Señores quedó Clombia
+Colombia sin Panamá
+Colombia sin Panamá
+Los gringos se la llevaron
+Los gringos se la llevaron
+Para poder trabajar
+Señores quedó Clombia
+Señores quedó Clombia
+Colombia sin Panamá
+Colombia sin Panamá
+De Jaque hasta Yaviza
+De Jaque hasta Yaviza
+Del Chocó hasta al Uraba
+Del Chocó hasta al Uraba
+Señores quedó Clombia
+Señores quedó Clombia
+Colombia sin Panamá
+Colombia sin Panamá
+Yo les requierdo recordar ayyy
+Yo les requierdo recordar ayyy
+Colombia sin Panamá
+Colombia sin Panamá
+Ayy quedó Colombia
+Ayy quedó Colombia
+Colombia sin Panamá
+Colombia sin Panamá
+Señores quedó Clombia`,
+  },
+  {
     titulo: "Contigo Me Voy Mi Negra",
     aliases: [],
     ritmo: "Bullerengue",
