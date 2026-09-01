@@ -63,6 +63,12 @@
       "date": "Noviembre 18, 2025",
       "location": "Berlín"
     },
+    "event4": {
+      "name": "Fête de la Musique Berlín",
+      "description": "CUMBÉ tocó en Ritmos Latinos, un festival de música latina al aire libre organizado por la Casa de las Culturas Latinoamericana",
+      "date": "21 de junio, 2026",
+      "location": "Casa de las Culturas Latinoamericana • Berlín"
+    },
     "event3": {
       "name": "Un Llamado al Corazón - Día Internacional del Agua",
       "description": "Celebración gratuita con música tradicional colombiana en vivo, práctica eco somática, canto al agua (cantoalagua) y limpieza energética junto al río Spree",

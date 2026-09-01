@@ -63,6 +63,12 @@
       "date": "18. November 2025",
       "location": "Berlin"
     },
+    "event4": {
+      "name": "Fête de la Musique Berlin",
+      "description": "CUMBÉ trat bei Ritmos Latinos auf, einem Open-Air-Lateinamerika-Musikfestival der Casa de las Culturas Latinoamericana",
+      "date": "21. Juni 2026",
+      "location": "Casa de las Culturas Latinoamericana • Berlin"
+    },
     "event3": {
       "name": "Ein Ruf ans Herz - Internationaler Tag des Wassers",
       "description": "Kostenlose Feier mit traditioneller kolumbianischer Live-Musik, öko-somatischer Praxis, Wassergesang (cantoalagua) und energetischer Reinigung am Spreeufer",
