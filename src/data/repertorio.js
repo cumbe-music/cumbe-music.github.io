@@ -988,5 +988,80 @@ Señores quedó Clombia`,
     seccion: "aprender",
     letra: null,
   },
+  {
+    titulo: "La Guanábana Dulce",
+    aliases: [],
+    ritmo: "Fandango",
+    autor: "Son de Tambó",
+    seccion: "aprender",
+    letra: `La guanábana dulce, Ay! Pa'qué es buena
+La guanábana dulce, Ay! Pa'qué es buena
+Para echarla en la olla, Con la berenjena
+Para echarla en la olla, Con la berenjena
+Le le le lee lee la (B),
+Lero lero le! Lero lero la! (*3)
+
+De tu casa a la mía, Son mis paseos (B)
+La tortuga en el agua, Se la come el bufeo
+La tortuga en el agua, Se la come el bufeo
+
+Le le le lee lee la (B)
+Lero lero le! Lero lero la! (*2)
+
+La tortuga en el agua, Se la come el bufeo
+La tortuga en el agua, Se la come el bufeo
+
+Cuando voy por la calle, Voy serenita (B)
+Pa' que diga la gente, Que soy muy bonita (*3)
+
+Le le le lee lee la (B) Lero lero le!
+Lero lero la! (*3)
+
+Cuando voy por la calle, Voy serenita (B)
+Pa' que diga la gente, Que soy muy bonita (*2)
+
+De tu casa a la mía, Son mis paseos (B)
+La tortuga en el agua, Se la come el bufeo
+La tortuga en el agua, Se la come el bufeo
+
+Le le le lee lee la (B), Lero lero le!
+Lero lero la! (*5)
+
+Lero lero le! LERO LERO LA`,
+  },
+  {
+    titulo: "Si Se Quema el Monte",
+    aliases: [],
+    ritmo: "Fandango",
+    autor: "Etelvina Maldonado",
+    seccion: "aprender",
+    letra: `Si se quema el monte, Déjenlo quemá,
+Que la misma cepa, Vuelve a retoñá
+
+Tambolero de mi vida,
+Prenda de mi corazón;
+Aquí tienen a Etelvina,
+Que te llama la atención.
+
+Ay no sé que tiene mi pecho
+Que la voz no me alevanta,
+Se parece a la sirena
+Cuando de mañana canta.
+
+Anoche cuando te ví
+Me pareció que e' bonita,
+Y hoy que amaneció
+Por ti yo pierdo la vista.
+
+Cuando quise, no quisiste
+Que eras mi pena y mi gloria,
+Y ahora que querés
+Otro reina en mi memoria.
+
+Muchachita de mi vida
+Prenda de mi corazón,
+Aquí tienes a esta negra
+Que les llama la atención.`,
+  },
 
 ];
