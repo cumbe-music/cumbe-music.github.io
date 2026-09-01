@@ -438,7 +438,7 @@ import { canciones, slugify } from '../data/repertorio.js';
       <section id="section-ensayado" class="repertoire-section">
         <h2 class="section-heading">
           Repertorio Ensayado
-          <span class="count-badge" id="count-ensayado">21</span>
+          <span class="count-badge" id="count-ensayado">22</span>
         </h2>
         <div class="songs-grid" id="grid-ensayado"></div>
       </section>
@@ -454,7 +454,7 @@ import { canciones, slugify } from '../data/repertorio.js';
       <section id="section-aprender" class="repertoire-section">
         <h2 class="section-heading">
           Por Aprender
-          <span class="count-badge" id="count-aprender">4</span>
+          <span class="count-badge" id="count-aprender">7</span>
         </h2>
         <div class="songs-grid" id="grid-aprender"></div>
       </section>
@@ -655,6 +655,7 @@ import { canciones, slugify } from '../data/repertorio.js';
         const section = document.getElementById('section-' + sec);
         const visibles = section.querySelectorAll('.song-card:not([style*="none"])').length;
         section.style.display = visibles === 0 ? 'none' : '';
+        document.getElementById('count-' + sec).textContent = visibles;
       });
     }
   </script>
