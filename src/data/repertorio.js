@@ -934,43 +934,113 @@ En 1903 quedó Colombia sin Panamá
 yeleeeeeeee Coloooooombiaaaaaaa,
 Colombia sin Panamá
 
-[Llamada y respuesta — Coro: "Colombia sin Panamá"]
 Señores quedó Clombia
+Coro: Colombia sin Panamá
+
 Señores quedó Clombia
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
+Coro: Colombia sin Panamá
+
 Pues la gente de Jamaica
+Coro: Colombia sin Panamá
+
 Pues la gente de Jamaica
+Coro: Colombia sin Panamá
+
 Que le tocó trabajar
+Coro: Colombia sin Panamá
+
 Que le tocó trabajar
+Coro: Colombia sin Panamá
+
 Señores quedó Clombia
+Coro: Colombia sin Panamá
+
 Señores quedó Clombia
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
+Coro: Colombia sin Panamá
+
 Los gringos se la llevaron
+Coro: Colombia sin Panamá
+
 Los gringos se la llevaron
+Coro: Colombia sin Panamá
+
 Para poder trabajar
+Coro: Colombia sin Panamá
+
 Señores quedó Clombia
+Coro: Colombia sin Panamá
+
 Señores quedó Clombia
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
+Coro: Colombia sin Panamá
+
 De Jaque hasta Yaviza
+Coro: Colombia sin Panamá
+
 De Jaque hasta Yaviza
+Coro: Colombia sin Panamá
+
 Del Chocó hasta al Uraba
+Coro: Colombia sin Panamá
+
 Del Chocó hasta al Uraba
+Coro: Colombia sin Panamá
+
 Señores quedó Clombia
+Coro: Colombia sin Panamá
+
 Señores quedó Clombia
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
+Coro: Colombia sin Panamá
+
 Yo les requierdo recordar ayyy
+Coro: Colombia sin Panamá
+
 Yo les requierdo recordar ayyy
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
+Coro: Colombia sin Panamá
+
 Ayy quedó Colombia
+Coro: Colombia sin Panamá
+
 Ayy quedó Colombia
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
+Coro: Colombia sin Panamá
+
 Colombia sin Panamá
-Señores quedó Clombia`,
+Coro: Colombia sin Panamá
+
+Señores quedó Clombia
+Coro: Colombia sin Panamá`,
   },
   {
     titulo: "Contigo Me Voy Mi Negra",
