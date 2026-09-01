@@ -874,7 +874,53 @@ Un homenaje sencillo para los pintores y poetas del valle, ay hombre`,
     ritmo: "Porro",
     autor: "Nando Coba",
     seccion: "aprender",
-    letra: null,
+    letra: `[Verso 1]
+La muerte me vino a buscar,
+yo le dije: hombre, carajo respeta. [var: y yo le dije carajo respeta]
+Yo tengo cien años nomás
+por ahí por donde viniste regresa.
+
+[Coro]
+Ay, conmigo que nadie se meta.
+Ay, conmigo que nadie se meta.
+Ay, conmigo que nadie se meta.
+oye, conmigo que nadie se meta.
+
+[Verso 2]
+La muerte se puso a escuchar [var: pensar]
+lo que me dijo, eso sí es fortaleza: [var: me dijo: ay hombre, eso sí es fortaleza]
+"nomás te vine a saludar, [var: yo sólo vine a saludar]
+todavía puedes seguir aquí en la tierra". [var: vivir]
+
+[Coro]
+Ay, conmigo que nadie se meta.
+Ay, conmigo que nadie se meta.
+Ay, conmigo que nadie se meta.
+sí, conmigo que nadie se meta.
+
+[Verso 3]
+La vejez no sólo es la edad
+ay las ganas de vivir, es lo que cuenta. [var: y]
+Siento que todavía hay facultad [var: Si estoy en cualquier facultad]
+para pedir una mujer que se venga. [var: Para medirme a to' lo que se venga.]
+
+[Coro]
+Ay, conmigo que nadie se meta.
+Ay, conmigo que nadie se meta.
+Ay, conmigo que nadie se meta.
+sí, conmigo que nadie se meta.
+
+[Verso 4]
+Mi diente ni asomo a aflojar,
+pa' las mujeres mi alma está dispuesta.
+Yo como lo que hay de tragar
+dicen lo que no hace daño aprovecha. [var: el "lo" se omite en algunas versiones]
+
+[Coro]
+Ay, conmigo que nadie se meta.
+Ay, conmigo que nadie se meta.
+Ay, conmigo que nadie se meta.
+oye, conmigo que nadie se meta.`,
   },
   {
     titulo: "Contigo Me Voy Mi Negra",
