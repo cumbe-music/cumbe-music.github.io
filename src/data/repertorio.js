@@ -1130,6 +1130,50 @@ Ay, la verdolaga, por el suelo
 Ay, la verdolaga, por el suelo`,
   },
   {
+    titulo: "A Rro Rró",
+    aliases: [],
+    ritmo: "Bullerengue Sentao",
+    autor: "Petrona Martínez",
+    seccion: "aprender",
+    letra: `[Pregón]
+Vamos mujeres, hoy es 13 de junio día de San Antonio,
+contesten el Bullerengue: uepe pa, uepe pa, vamos tambo! Ay, eje!
+
+Morena color de clavo, color de clavo canela
+Si queres querer a otro, espera que yo me muera
+
+Arró rró mamá, arró arró mamá
+
+Morena si tú me quieres, no se lo digas a nadie
+Ponte la mano en el pecho y dile al corazón que calle
+
+Dame un poquito de agua, que vengo muerta e la sed
+No he venido por el agua, sino por venite a ver
+
+Mañana que yo me vaya, quién se acordará de mí
+Solamente la tinaja, por el agua que bebí
+
+Lloraba patricio en Julio, lloraba y se conformaba
+Y el llanto me decía: ¿Mi madre qué me pasara?
+
+Me puse a juga y perdí ya no quiero jugar ma'
+Yo no quiero me ganen ni yo tampoco gana'
+
+Pido una botella e ron, que la destapen ahora
+Un trago pal tambolero y otro pa' la cantadora
+
+Mi madre me dio un consejo yo no lo quise coje
+Después de mi madre muerta del consejo me acordé
+
+Mi madre me dijo a mí, por qué yo era parrandero
+Yo le contesté a mi madre que yo en la parranda muero
+
+Mi madre me decía arró, cuando me ponía a llorar
+Arró ró decía mi madre cuando me quería callar
+
+Arró rró mamá, arró arró mamá...`,
+  },
+  {
     titulo: "El Mundo al Revés",
     aliases: [],
     ritmo: "Paseo",
