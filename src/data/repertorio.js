@@ -29,7 +29,8 @@ export function categorizarRitmo(ritmo) {
   if (r.includes('puya')) cats.push('puya');
   if (r.includes('merengue')) cats.push('merengue');
   if (r.includes('vallenato')) cats.push('vallenato');
-  if (r.includes('bullerengue') || r.includes('paseo') || r.includes('samba') ||
+  if (r.includes('bullerengue') || r.includes('chalupa') || r.includes('fandango')) cats.push('bullerengue');
+  if (r.includes('paseo') || r.includes('samba') ||
       r.includes('jaláo') || r.includes('jalao') || r.includes('danza') || r.includes('6/8')) {
     cats.push('otros');
   }
