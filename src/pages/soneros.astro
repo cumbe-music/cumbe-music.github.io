@@ -1,7 +1,22 @@
 ---
 // Repertorio privado de CUMBÉ · /soneros
 // Solo comparte este link con la banda
-import { canciones, slugify } from '../data/repertorio.js';
+import { canciones, slugify, categorizarRitmo } from '../data/repertorio.js';
+
+const conCat = (cat) => canciones.filter(c => categorizarRitmo(c.ritmo).includes(cat)).length;
+
+const stats = {
+  total:        canciones.length,
+  gaitas:       conCat('gaita-corrida'),
+  puyas:        conCat('puya'),
+  porros:       conCat('porro'),
+  cumbias:      conCat('cumbia'),
+  merengues:    conCat('merengue'),
+  bullerengues: conCat('bullerengue'),
+  ensayado:     canciones.filter(c => c.seccion === 'ensayado').length,
+  podriamos:    canciones.filter(c => c.seccion === 'podriamos').length,
+  aprender:     canciones.filter(c => c.seccion === 'aprender').length,
+};
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -410,13 +425,13 @@ import { canciones, slugify } from '../data/repertorio.js';
     </header>
 
     <div class="stats-bar">
-      <div class="stat-item"><strong>44</strong><span>Canciones</span></div>
-      <div class="stat-item"><strong>15</strong><span>Gaitas</span></div>
-      <div class="stat-item"><strong>9</strong><span>Puyas</span></div>
-      <div class="stat-item"><strong>7</strong><span>Porros</span></div>
-      <div class="stat-item"><strong>6</strong><span>Cumbias</span></div>
-      <div class="stat-item"><strong>2</strong><span>Merengues</span></div>
-      <div class="stat-item"><strong>4</strong><span>Bullerengues</span></div>
+      <div class="stat-item"><strong>{stats.total}</strong><span>Canciones</span></div>
+      <div class="stat-item"><strong>{stats.gaitas}</strong><span>Gaitas</span></div>
+      <div class="stat-item"><strong>{stats.puyas}</strong><span>Puyas</span></div>
+      <div class="stat-item"><strong>{stats.porros}</strong><span>Porros</span></div>
+      <div class="stat-item"><strong>{stats.cumbias}</strong><span>Cumbias</span></div>
+      <div class="stat-item"><strong>{stats.merengues}</strong><span>Merengues</span></div>
+      <div class="stat-item"><strong>{stats.bullerengues}</strong><span>Bullerengues</span></div>
     </div>
 
     <div class="search-bar">
@@ -439,7 +454,7 @@ import { canciones, slugify } from '../data/repertorio.js';
       <section id="section-ensayado" class="repertoire-section">
         <h2 class="section-heading">
           Repertorio Ensayado
-          <span class="count-badge" id="count-ensayado">22</span>
+          <span class="count-badge" id="count-ensayado">{stats.ensayado}</span>
         </h2>
         <div class="songs-grid" id="grid-ensayado"></div>
       </section>
@@ -447,7 +462,7 @@ import { canciones, slugify } from '../data/repertorio.js';
       <section id="section-podriamos" class="repertoire-section">
         <h2 class="section-heading">
           Podríamos Tocar
-          <span class="count-badge" id="count-podriamos">15</span>
+          <span class="count-badge" id="count-podriamos">{stats.podriamos}</span>
         </h2>
         <div class="songs-grid" id="grid-podriamos"></div>
       </section>
@@ -455,7 +470,7 @@ import { canciones, slugify } from '../data/repertorio.js';
       <section id="section-aprender" class="repertoire-section">
         <h2 class="section-heading">
           Por Aprender
-          <span class="count-badge" id="count-aprender">7</span>
+          <span class="count-badge" id="count-aprender">{stats.aprender}</span>
         </h2>
         <div class="songs-grid" id="grid-aprender"></div>
       </section>
