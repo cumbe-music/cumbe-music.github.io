@@ -1051,6 +1051,85 @@ Coro: Colombia sin Panamá`,
     letra: null,
   },
   {
+    titulo: "La Verdolaga",
+    aliases: [],
+    ritmo: "Bullerengue Sentao",
+    autor: "Totó La Momposina",
+    seccion: "aprender",
+    letra: `Es bonita y es bonita, ay, la verdolaga, por el suelo
+Bonito como se riega, ay, la verdolaga, por el suelo
+
+Ay, como se riega, por el suelo
+Ay, ella es bonita, por el suelo
+Ay, es verdecita, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, yo la sembré, por el suelo
+Ay, yo la sembré, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, la verdolaga, por el suelo
+
+Ay, yo la ventie, por el suelo
+Ay, yo la ventie, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, yo la cerní, por el suelo
+Ay, yo la cerní, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, la verdolaga, por el suelo
+
+Quién es que dice que yo, ay la verdolaga, por el suelo
+Poco va a ser la perdia', ay la verdolaga, por el suelo
+Quién es que dice que yo, ay la verdolaga, por el suelo
+Poco va a ser la perdia', ay la verdolaga, por el suelo
+La perdí porque Dios quiso, ay la verdolaga, por el suelo
+No por qué cobarde fui, ay la verdolaga, por el suelo
+
+Ay, como se riega, por el suelo
+Ay, ella es bonita, por el suelo
+Ay, es verdecita, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, yo la sembré, por el suelo
+Ay, yo la sembré, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, la verdolaga, por el suelo
+
+Niño blanco no me olvides, la verdolaga, por el suelo
+Tus lindas declaraciones, la verdolaga, por el suelo
+Niño blanco no me olvides, la verdolaga, por el suelo
+Tus lindas declaraciones, la verdolaga, por el suelo
+Pasaré mis bellos días, la verdolaga, por el suelo
+Como copo de algodón, ay la verdolaga, por el suelo
+
+Ay, cómo se riega, por el suelo
+Ay, ella es bonita, por el suelo
+Ay, es verdecita, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, cómo se riega, por el suelo
+Ay, cómo se riega, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, la verdolaga, por el suelo
+
+Dale duro a ese tambor, ay la verdolaga (botalo), por el suelo
+Y acabalo de romper, ay la verdolaga (azotalo), por el suelo
+Dale duro a ese tambor, ay la verdolaga, por el suelo
+Y acabalo de romper, ay la verdolaga, por el suelo
+Y si el dueño pregunta, ay la verdolaga, por el suelo
+Dile que yo te mande, ay la verdolaga, por el suelo
+
+Ay, como se riega, por el suelo
+Ay, es de bonita, por el suelo
+Ay, es verdecita, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, yo la sembré, por el suelo
+Ay, yo la sembré, por el suelo
+Ay, la verdolaga, por el suelo
+Ay, la verdolaga, por el suelo`,
+  },
+  {
     titulo: "El Mundo al Revés",
     aliases: [],
     ritmo: "Paseo",
