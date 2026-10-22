@@ -1369,5 +1369,49 @@ Prenda de mi corazón,
 Aquí tienes a esta negra
 Que les llama la atención.`,
   },
+  {
+    titulo: "La Pasionaria",
+    aliases: [],
+    ritmo: "Porro",
+    autor: "Gaiteros de Pueblo Santo",
+    seccion: "aprender",
+    letra: `Morena de mis amores,
+La razón de mis plegarias,
+Son tus labios color rosa, capullito e' trinitaria.
+(Son tus labios color rosa, capullito e' trinitaria).
+
+Cómo no desear tus labios,
+De amapolas que florecen,
+Si el sol sale del reposo solo cuando tú amaneces.
+(Si el sol sale del reposo solo cuando tú amaneces).
+
+Eres flor de bonche,
+(Cayena bonita)
+Ramita e' matarraton pa' mi,
+Santigua bendita,
+Orquídea del monte,
+(Linda y chiquitica)
+La pasionaria de amor pa' mi,
+Dulce mañanita.
+
+Por ti amanezco temprano,
+Con el sol tengo una cita,
+Poquito a poco abonando el jardín pa' tu casita.
+(Poquito a poco abonando el jardín pa' tu casita).
+
+Despertar en tus mañanas,
+Bañado en ricos olores,
+Yo duermo con la más bella que hay de toditas las flores.
+(Yo duermo con la más bella que hay de toditas las flores).
+
+Eres flor de bonche,
+(Cayena bonita)
+Ramita e' matarraton pa' mi,
+Santigua bendita,
+Orquídea del monte,
+(Linda y chiquitica)
+La pasionaria de amor pa' mi,
+Dulce mañanita.`,
+  },
 
 ];
