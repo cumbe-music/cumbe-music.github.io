@@ -51,6 +51,12 @@
   },
   "events": {
     "title": "Vergangene Veranstaltungen",
+    "event5": {
+      "name": "10 Jahre Friedensabkommen in Kolumbien",
+      "description": "CUMBÉ trat live bei dieser Podiumsdiskussion zu 10 Jahren Friedensabkommen in Kolumbien auf, veranstaltet von der Heinrich-Böll-Stiftung",
+      "date": "5. Oktober 2026",
+      "location": "Heinrich-Böll-Stiftung • Berlin"
+    },
     "event1": {
       "name": "SWEAT",
       "description": "Live-Musik-Tanz-Ritual für den Geist des Wassers",

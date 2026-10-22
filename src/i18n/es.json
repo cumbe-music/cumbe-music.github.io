@@ -51,6 +51,12 @@
   },
   "events": {
     "title": "Eventos Pasados",
+    "event5": {
+      "name": "10 Años del Acuerdo de Paz en Colombia",
+      "description": "CUMBÉ tocó en vivo en este panel sobre los 10 años del Acuerdo de Paz en Colombia, organizado por Heinrich-Böll-Stiftung",
+      "date": "5 de octubre, 2026",
+      "location": "Heinrich-Böll-Stiftung • Berlín"
+    },
     "event1": {
       "name": "SWEAT",
       "description": "Ritual de música y danza en vivo por el espíritu del agua",

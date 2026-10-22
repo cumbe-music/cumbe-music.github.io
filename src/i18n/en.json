@@ -51,6 +51,12 @@
   },
   "events": {
     "title": "Past Events",
+    "event5": {
+      "name": "10 Years of the Peace Agreement in Colombia",
+      "description": "CUMBÉ performed live at this panel discussion on 10 years since Colombia's Peace Agreement, hosted by Heinrich-Böll-Stiftung",
+      "date": "October 5, 2026",
+      "location": "Heinrich-Böll-Stiftung • Berlin"
+    },
     "event1": {
       "name": "SWEAT",
       "description": "A Live Music Dance Ritual for the Spirit of Water",
